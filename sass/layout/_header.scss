@@ -1,0 +1,34 @@
+.header {
+    height: 100vh;
+    background-color: $main_purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &_img {
+        height: 45rem;
+        margin-top: 8rem;
+    }
+
+    &_text {
+        width: 60rem;
+        &--main {
+            margin-bottom: 2rem;
+        }
+
+        &--sub {}
+    }
+
+    &_button {
+        margin-top: 4rem;
+        border-radius: 2.5rem;
+        width: 25rem;
+        background-color: $accent_purple;
+        padding: 1rem 0rem;
+        @include fastTransitionAll;
+
+        &:hover {
+            background-color: darken($accent_purple, 3);
+        }
+    }
+
+}
