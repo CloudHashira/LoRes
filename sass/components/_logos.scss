@@ -1,0 +1,15 @@
+.main_logo {
+    display: flex;
+
+    &--img {
+        color: $main_white;
+        font-size: 4rem;
+    }
+
+    &--text {
+        color: $main_white;
+        font-size: 3rem;
+        font-weight: 500;
+        margin-left: 0.75rem;
+    }
+}
