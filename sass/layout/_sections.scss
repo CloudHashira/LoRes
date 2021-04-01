@@ -1,19 +1,50 @@
+main {
+    position: relative;
+}
+
+.wave {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: -1.5rem;
+
+    &_svg {
+        fill: $secondary_purple;
+    }
+}
+
 .features {
     background-color: $secondary_purple;
-    padding: 5rem 10rem;
-    height: 60rem;
+    padding: 15rem 5rem 6rem 5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    position: relative;
+
+    @include respond(bigScreen) {
+        padding: 12rem 5rem;
+    }
+    @include respond(phone) {
+        padding: 10rem 5rem 3rem 5rem;
+    }
 
     &_card {
         width: 30rem;
         height: 25rem;
-        margin: 0 2rem;
+        margin: 3rem 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @include respond(bigScreen) {
+            margin: 0 1.5rem;
+            width: 28rem;
+        }
+        @include respond(phone) {
+            width: 40rem;
+            margin: 4rem 2rem;
+        }
 
         &--icon {
             margin-bottom: 1.5rem;
@@ -21,18 +52,200 @@
 
         &--header {
             margin-bottom: 1rem;
+            height: 4rem;
         }
 
-        &--text {}
+        &--text {
+            height: 20rem;
+        }
     }
 }
 
 .family {
+    padding: 5rem;
     background-color: $secondary_purple;
-    height: 80rem;
     display: flex;
-    
+    align-items: center;
+    justify-content: center;
+
+    @include respond(bigScreen) {
+        padding: 7rem;
+    }
+
+    @include respond(tabletLandscape) {
+        flex-direction: column;
+        padding: 5rem;
+    }
+
     &_image {
+        height: 50rem;
+
+        @include respond(phone) {
+            height: 40rem;
+        }
+    }
+
+    &_text {
+
+        @include respond(tabletLandscape) {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+        
+        &--main {
+            margin-bottom: 1rem;
+        }
+
+        &--sub {
+            margin-bottom: 2rem;
+            
+            @include respond(tabletLandscape) {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+        }
+
+        // &--link {}
+    }
+}
+
+.quotes {
+    background-color: $secondary_purple;
+    padding: 5rem 0rem 30rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+
+
+    &_card {
+        height: 20rem;
+        width: 35rem;
+        background-color: $main_purple;
+        padding: 1rem;
+        margin: 3rem 2rem;
+        border-radius: 1rem;
+        position: relative;
+        box-shadow: .25rem .5rem 1rem rgba($main_black, 0.4);
+
+        @include respond(bigScreen) {
+            height: 20rem;
+            width: 35rem;
+        }
+
+        @include respond(phone) {
+            height: 20rem;
+            width: 40rem;
+        }
+    }
+
+    &_text {
+        margin-bottom: 2rem;
+        padding: .25rem 1rem;
+    }
+
+    &_user {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        display: flex;
+
+        @include respond(bigScreen) {
+            bottom: 0.8rem;
+        }
+        @include respond(phone) {
+            bottom: 1rem;
+        }
+
+        &--image {
+            height: 5rem;
+            border-radius: 50%;
+            display: inline;
+
+            @include respond(bigScreen) {
+                height: 5.5rem;
+            }
+
+            @include respond(phone) {
+                height: 6rem;
+            }
+        }
+
+        &--text {
+            margin-left: 1rem;
+            
+            // &-header {}
+
+            // &-author {}
+        }
+    }
+}
+
+.signup {
+    width: 75vw;
+    max-width: 100rem;
+    height: 30rem;
+    position: absolute;
+    background-color: darken($main_purple, 2);
+    bottom: -15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: .25rem .5rem 1rem rgba($main_black, 0.4);
+
+    @include respond(phone) {
+        width: 100%;
         height: 40rem;
+        bottom: -20rem;
+    }
+
+
+    &_header {
+        margin: 5rem 0 1rem 0;
+    }
+
+    &_text {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &_cta {
+        width: 60rem;
+        margin: 3rem auto 0 auto;
+        display: flex;
+
+        @include respond(phone) {
+            margin-top: 5rem;
+            width: 50rem;
+        }
+    }
+
+    &_input {
+        width: 40rem;
+        padding: .5rem 1.5rem;
+        border-radius: 2rem 0 0 2rem;
+        border: none;
+        outline: none;
+
+        @include respond(phone) {
+            width: 35rem;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 .2rem rgba($accent_purple, 0.9);
+        }
+    }
+
+    &_link {
+        background-color: $accent_purple;
+        padding: 1rem 0;
+        border-radius: 0 2rem 2rem 0;
+        width: 14rem;
+        border: none;
     }
 }

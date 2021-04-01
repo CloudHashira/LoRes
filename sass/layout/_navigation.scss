@@ -1,27 +1,23 @@
 .navigation {
+    width: 92.5%;
+    z-index: 100;
     position: absolute;
-    width: 100%;
+    left: 50%;
+    top: 3.5rem;
+    transform: translateX(-50%);
+    
     display: flex;
     justify-content: space-between;
-    background-color: $main_purple;
-
-    &_logo{
-        display: flex;
-        margin: 2rem 4rem;
-
-        // &--img {}
-
-        &--text {
-            margin-left: 0.75rem;
-        }
-    }
 
     &_list {
         display: flex;
         width: 25rem;
-        margin: 2rem 7rem 2rem 0rem;
         justify-content: space-between;
         align-items: center;
+
+        @include respond(phone) {
+            margin-right: 1rem;
+        }
     }
     
     // &_item {}
